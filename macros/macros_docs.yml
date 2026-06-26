@@ -19,10 +19,10 @@ macros:
   - name: grant_select
     description: "Generate a SQL GRANT statement to give SELECT permissions for a set of tables.views to a specified role for a specified database"
     arguments:
-      - name: schema_name
+      - name: schema
         description: "The name of the schema to grant SELECT permissions on"
         type: string
-      - name: role_name
+      - name: role
         description: "The name of the role to grant SELECT permissions to"
         type: string
       - name: database

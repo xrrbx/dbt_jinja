@@ -2,12 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'jaffle_shop'
+name: 'dbt_jinja'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'default'
+profile: 'jaffle_shop'
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -32,14 +32,29 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
-models:
-  jaffle_shop:
-    snowflake_spend:
-      +enabled: true
-    staging:
-      +materialized: view
-    marts:
-      +materialized: table
+# previous version
+# models:
+#   jaffle_shop:
+#     snowflake_spend:
+#       +enabled: true
+#     staging:
+#       +materialized: view
+#     marts:
+#       +materialized: table
 
+models:
+  dbt_jinja:
+    +dataset: dbt_jinja         # Forces ALL models in this repo into 'dbt_jinja'
+    
+    0_staging:
+      +materialized: view
+    1_intermediate:
+      +materialized: view
+    2_marts:
+      +materialized: table
+    3_python_demo:
+      +enabled: false 
+    4_jinja:
+      +enabled: false    # <--- This tells dbt to completely ignore this entire practice folder!
 
     

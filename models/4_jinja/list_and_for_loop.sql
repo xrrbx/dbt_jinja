@@ -1,3 +1,6 @@
+-- curly braces to ignore
+{
+
 {% set foods = ['radish', 'cucumber', 'chicken nugget', 'avocado'] %}
 
 {% for food in foods %}
@@ -8,3 +11,5 @@
     {% endif %}
     The delicious {{ food }} is my favourite {{ food_type}}
 {% endfor %}
+
+}

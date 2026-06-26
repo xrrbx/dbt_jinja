@@ -1,3 +1,5 @@
 {
-    "dbt.dbtPythonPathOverride": "\"); print(sys.executable); print(\""
+    "dbt.dbtPythonPathOverride": "\"); print(sys.executable); print(\"",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
 }
